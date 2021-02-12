@@ -1,4 +1,4 @@
-const data = [
+let data = [
     {
         name: "Tudor",
         marks: [2, 4, 2, 4, 7]
@@ -43,14 +43,28 @@ const showLowAverage = () => {
     }
 };
 
+const getAverage = array => {
+    return array.reduce((a, b) => {
+        return a + b;
+    }, 0) / array.length;
+};
+
+const compare = (first, second) => {
+    if (getAverage(first.marks) < (getAverage(second.marks))) return 1;
+    if (getAverage(first.marks) > (getAverage(second.marks))) return -1;
+    return 0;
+};
+
+
 averageMark();
 console.log("/////////");
 showLowAverage();
 console.log("/////////");
 // with max average, or with max marks?
 console.log("/////////");
+//data.sort(compare);
+console.log(data.sort(
+    (first, second) =>
+        getAverage(first.marks) < getAverage(second.marks) ? 1 : getAverage(first.marks) > getAverage(second.marks) ? -1 : 0));
+//inline function
 
-
-const getAverage = array => {
-    // return Math.
-};
