@@ -22,41 +22,57 @@ let data = [
 ];
 
 
-const averageMark = () => {
-    for (const value of data) {
-        console.log(`Numele: ${value.name}`);
-        let average = value.marks.reduce((a, b) => {
-            return a + b;
+const showNameAverage = () => {
+    for (const student of data) {
+        console.log(`Numele: ${student.name}`);
+        let studentAverage = student.marks.reduce((first, second) => {
+            return first + second;
         }, 0);
-        console.log(`Average Mark: ${average / value.marks.length}`)
+        console.log(`Average Mark: ${studentAverage / student.marks.length}`)
     }
 };
 
 const showLowAverage = () => {
-    for (const value of data) {
-        let average = value.marks.reduce((a, b) => {
-            return a + b;
+    for (const student of data) {
+        let average = student.marks.reduce((first, second) => {
+            return first + second;
         }, 0);
-        if (average / value.marks.length < 5) {
-            console.log(value.name);
+        if (average / student.marks.length < 5) {
+            console.log(student.name);
         }
     }
 };
 
-const getAverage = array => {
-    return array.reduce((a, b) => {
-        return a + b;
+const getStudentAverage = array => {
+    return array.reduce((first, second) => {
+        return first + second;
     }, 0) / array.length;
 };
 
 const compare = (first, second) => {
-    if (getAverage(first.marks) < (getAverage(second.marks))) return 1;
-    if (getAverage(first.marks) > (getAverage(second.marks))) return -1;
+    if (getStudentAverage(first.marks) < (getStudentAverage(second.marks))) return 1;
+    if (getStudentAverage(first.marks) > (getStudentAverage(second.marks))) return -1;
     return 0;
 };
 
+const getTotalAverage = () => {
+    let totalAverage = 0;
+    for (const student of data) {
+        totalAverage += getStudentAverage(student.marks);
+    }
+    return totalAverage / data.length
+};
 
-averageMark();
+const showHigherAverage = (totalAverage) => {
+    console.log(`Total Average: ${totalAverage}`);
+    for (const student of data) {
+        getStudentAverage(student.marks) > totalAverage ? console.log(`Name: ${student.name}`) : 0;
+    }
+};
+
+
+
+showNameAverage();
 console.log("/////////");
 showLowAverage();
 console.log("/////////");
@@ -65,6 +81,13 @@ console.log("/////////");
 //data.sort(compare);
 console.log(data.sort(
     (first, second) =>
-        getAverage(first.marks) < getAverage(second.marks) ? 1 : getAverage(first.marks) > getAverage(second.marks) ? -1 : 0));
-//inline function
+        getStudentAverage(first.marks) < getStudentAverage(second.marks) ? 1 : getStudentAverage(first.marks) > getStudentAverage(second.marks) ? -1 : 0));
+console.log("/////////");
+
+showHigherAverage(getTotalAverage());
+
+
+
+
+
 
