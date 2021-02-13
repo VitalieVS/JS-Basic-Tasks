@@ -25,8 +25,8 @@ let data = [
 const showNameAverage = () => {
     for (const student of data) {
         console.log(`Numele: ${student.name}`);
-        let studentAverage = student.marks.reduce((first, second) => {
-            return first + second;
+        let studentAverage = student.marks.reduce((accumulator, value) => {
+            return accumulator + value;
         }, 0);
         console.log(`Average Mark: ${studentAverage / student.marks.length}`)
     }
@@ -34,8 +34,8 @@ const showNameAverage = () => {
 
 const showLowAverage = () => {
     for (const student of data) {
-        let average = student.marks.reduce((first, second) => {
-            return first + second;
+        let average = student.marks.reduce((accumulator, value) => {
+            return accumulator + value;
         }, 0);
         if (average / student.marks.length < 5) {
             console.log(student.name);
@@ -44,8 +44,8 @@ const showLowAverage = () => {
 };
 
 const getStudentAverage = array => {
-    return array.reduce((first, second) => {
-        return first + second;
+    return array.reduce((accumulator, value) => {
+        return accumulator + value;
     }, 0) / array.length;
 };
 
