@@ -1,6 +1,6 @@
-const square = value => Math.pow(2, value);
+square = value => Math.pow(2, value);
 
-const convert = (square, array)  => {
+convert = (square, array)  => {
     const arr = [];
     for (const value of array) {
         arr.push(square(value));

@@ -21,8 +21,7 @@ let data = [
     }
 ];
 
-
-const showNameAverage = () => {
+showNameAverage = () => {
     for (const student of data) {
         console.log(`Numele: ${student.name}`);
         let studentAverage = student.marks.reduce((accumulator, value) => {
@@ -32,7 +31,7 @@ const showNameAverage = () => {
     }
 };
 
-const showLowAverage = () => {
+showLowAverage = () => {
     for (const student of data) {
         let average = student.marks.reduce((accumulator, value) => {
             return accumulator + value;
@@ -43,19 +42,19 @@ const showLowAverage = () => {
     }
 };
 
-const getStudentAverage = array => {
+getStudentAverage = array => {
     return array.reduce((accumulator, value) => {
         return accumulator + value;
     }, 0) / array.length;
 };
 
-const compare = (first, second) => {
+compare = (first, second) => {
     if (getStudentAverage(first.marks) < (getStudentAverage(second.marks))) return 1;
     if (getStudentAverage(first.marks) > (getStudentAverage(second.marks))) return -1;
     return 0;
 };
 
-const getTotalAverage = () => {
+getTotalAverage = () => {
     let totalAverage = 0;
     for (const student of data) {
         totalAverage += getStudentAverage(student.marks);
@@ -63,14 +62,12 @@ const getTotalAverage = () => {
     return totalAverage / data.length
 };
 
-const showHigherAverage = (totalAverage) => {
+showHigherAverage = (totalAverage) => {
     console.log(`Total Average: ${totalAverage}`);
     for (const student of data) {
         getStudentAverage(student.marks) > totalAverage ? console.log(`Name: ${student.name}`) : 0;
     }
 };
-
-
 
 showNameAverage();
 console.log("/////////");
@@ -78,12 +75,10 @@ showLowAverage();
 console.log("/////////");
 // with max average, or with max marks?
 console.log("/////////");
-//data.sort(compare);
 console.log(data.sort(
     (first, second) =>
         getStudentAverage(first.marks) < getStudentAverage(second.marks) ? 1 : getStudentAverage(first.marks) > getStudentAverage(second.marks) ? -1 : 0));
 console.log("/////////");
-
 showHigherAverage(getTotalAverage());
 
 

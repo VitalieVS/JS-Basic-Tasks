@@ -1,7 +1,4 @@
-const sumInputNumbers = () => {
-    let inputNumber = 0;
-    const numbers = [];
-
+sumInputNumbers = (numbers = [],  inputNumber = 0) => {
     while (!(inputNumber == null || isNaN(inputNumber))) {
         let inputText = prompt("give number");
         inputNumber = parseInt(inputText);
@@ -13,7 +10,7 @@ const sumInputNumbers = () => {
 
     return numbers.reduce((accumulator, value) => {
         return accumulator + value;
-    })
+    });
 };
 
 console.log(sumInputNumbers());

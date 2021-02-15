@@ -1,6 +1,6 @@
 const colors = ["red", "green", "blue"];
 
-const checkColor = color => {
+checkColor = color => {
     for (const value of colors) {
         if (value === color) {
             return 1;
