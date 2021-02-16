@@ -10,6 +10,7 @@ const weekDays = {
 
 swap = obj => {
     return Object.keys(obj).reduce((ret, key) => {
+        console.log(ret[obj[key]]);
         ret[obj[key]] = key;
         return ret;
     }, {});
