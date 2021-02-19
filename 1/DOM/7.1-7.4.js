@@ -26,3 +26,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     }, 2000);
 });
+
+// html
+/// <button id="orangeButton">Orange</button>
+//
+// <ol id="orderedList"> </ol>
