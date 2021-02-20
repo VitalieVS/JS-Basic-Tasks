@@ -3,15 +3,13 @@ const text = document.getElementById("myInput");
 const submit = document.getElementById("submit");
 
 const resetInput = () => {
-    submit.setAttribute("disabled", "disabled");
+    submit.toggleAttribute("disabled");
     text.value = "";
 };
 
 const inputHandler = () => {
     text.addEventListener("input", () => {
-        (!text.value) ?
-            submit.setAttribute("disabled", "disabled")
-            : submit.removeAttribute("disabled");
+        submit.toggleAttribute((!text.value) ? "disabled" : "disabled", false)
     })
 };
 
