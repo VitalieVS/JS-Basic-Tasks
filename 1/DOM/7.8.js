@@ -1,3 +1,8 @@
+/*
+<label for="myInput"></label><input id="myInput" type="text">
+<input id="submit" type="submit">
+ */
+
 const orderedList = document.querySelector("ol");
 const text = document.getElementById("myInput");
 const submit = document.getElementById("submit");
