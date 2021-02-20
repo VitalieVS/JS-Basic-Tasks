@@ -2,3 +2,7 @@ td {
     border: 1px solid;
     padding: 5px;
 }
+
+.black {
+   background-color: black;
+}
