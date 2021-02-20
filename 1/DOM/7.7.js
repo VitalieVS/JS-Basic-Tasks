@@ -3,13 +3,14 @@ const links = [
 ];
 
 const addLinks = () => {
-    const out = document.querySelector('body');
+    const ul = document.createElement("ul");
+    document.querySelector("body").appendChild(ul);
     const currying = tag => text => `<${tag}><a href="${text}">${text}</a></${tag}>`;
 
     for (const link of links) {
         const tag = currying("li");
         const text = tag(`${link}`);
-        out.innerHTML += text;
+        ul.innerHTML += text;
     }
 };
 
