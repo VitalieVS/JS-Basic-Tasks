@@ -1,5 +1,5 @@
 const elem = document.getElementById("elem");
-
+// <div id="elem" style="width: 10px; height: 10px; background: purple;"></div>
 elem.addEventListener("click", () => {
     console.log(elem.style.width);
     console.log(elem.style.height);
