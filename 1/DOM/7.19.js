@@ -1,3 +1,12 @@
+/*
+<div id="parent-left" style="width: 80px; height: 30px;border: 1px solid black">
+    <div id="child" draggable="true">Child Elem</div>
+</div>
+<br>
+
+<div id="parent-right" style="width: 80px; height: 30px;border: 1px solid black"></div>
+ */
+
 const parent_left = document.getElementById("parent-left");
 const child = document.getElementById("child");
 const parent_right = document.getElementById("parent-right");
