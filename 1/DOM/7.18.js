@@ -1,3 +1,11 @@
+/*
+<body style="display: flex; justify-content: center">
+<div id="viewport" style="width: 700px; height: 700px; border: 1px solid black">
+    <div id="player" style="position:fixed; width: 50px; height: 50px; background: red;"></div>
+</div>
+ */
+
+
 const player = document.getElementById("player");
 const viewPort = document.getElementById("viewport");
 
